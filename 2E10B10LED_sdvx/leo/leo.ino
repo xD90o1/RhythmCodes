@@ -16,7 +16,7 @@ boolean hidMode, state[2]={false}, set[4]={false};
 int encL=0, encR=0;
 const int PULSE = 600;  //number of pulses per revolution of encoders 
 byte EncPins[]    = {0, 1, 2, 3};
-byte SinglePins[] = {4, 6, 8, 10,14,16,12,22,18,20};
+byte SinglePins[] = {4, 6, 8, 10,14,16,12,22,18,20}; //Rearranged the pins so that Start button falls on Button 9
 byte ButtonPins[] = {5, 7, 9, 11,15,17,13,23,19,21};
 unsigned long ReactiveTimeoutMax = 1000;  //number of cycles before HID falls back to reactive
 
@@ -24,10 +24,10 @@ unsigned long ReactiveTimeoutMax = 1000;  //number of cycles before HID falls ba
  * VOL-L Green to pin 0 and White to pin 1
  * VOL-R Green to pin 2 and White to pin 3
  * current pin layout
- *  SinglePins {4,6,8,10,12,18,20,22,14,16} = LED 1 to 10
+ *  SinglePins {4,6,8,10,14,16,12,22,18,20} = LED 1 to 10
  *    connect pin to resistor and then + termnial of LED
  *    connect ground to - terminal of LED
- *  ButtonPins {5,7,9,11,13,19,21,23,15,17} = Button input 1 to 10
+ *  ButtonPins {5,7,9,11,15,17,13,23,19,21} = Button input 1 to 10
  *    connect button pin to ground to trigger button press
  *  Light mode detection by read first button while connecting usb 
  *   hold    = false = reactive lighting 
